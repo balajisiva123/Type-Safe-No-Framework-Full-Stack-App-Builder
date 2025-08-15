@@ -1,0 +1,7 @@
+
+{
+  "scripts": {
+    "dev:backend": "cd backend && nodemon src/index.ts",
+    "dev:frontend": "cd frontend && npm run dev"
+  }
+}
