@@ -10,9 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 
+
 app.post("/api/getUser",(req,res)=>{
     const {id}=req.body as API.GetUser.Request;
-    const user:API.GetUser.Response={id,name:"Alice"};
+    const user:API.GetUser.Response={id,name:"Ajith Kumar"};
     res.json(user);
 
 });
