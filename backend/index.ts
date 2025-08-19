@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import {API} from "../shared/api"
-
+import { Tables } from "./schema";
+import { QueryBuilder } from "./queryBuilder";
 
 const app=express();
 
@@ -9,7 +10,9 @@ app.use(cors());
 
 app.use(express.json());
 
+const qb=new QueryBuilder("softwareStatus").select("sno","software","status");
 
+console.log(qb.toSQL());
 
 app.post("/api/getUser",(req,res)=>{
     const {id}=req.body as API.GetUser.Request;
