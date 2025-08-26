@@ -26,6 +26,9 @@ export function AutoForm<T extends Record<string,any>>({fields,config={},initial
     const [values,setValues]=useState<Partial<T>>(initialValues);
 
     const setValue=(k: keyof T & String,v:any)=>setValues(prev=>({...prev,[k]:v}));
+
+
+    
 return (<form onSubmit={e=>{e.preventDefault(); onSubmit(values);}} className={`${styles.form}`} >
     {fields.map((name)=>
         {
