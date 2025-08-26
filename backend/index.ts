@@ -10,7 +10,8 @@ app.use(cors());
 
 app.use(express.json());
 
-const qb=new QueryBuilder("softwareStatus").select("sno","software","status").where("softwareType","=","service");
+// const qb=new QueryBuilder("softwareStatus").select("sno","software","status").where("softwareType","=","service");
+const qb=new QueryBuilder("softwareStatus").select("sno","software","status").where("softwareType","=","service").where("sno",">",10);
 
 console.log(qb.toSQL());
 
